@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h1>Verification</h1>
+    <h4>Enter otp sent on your number</h4>
+</head>
+<body>
+    <form action="/otp" method="post">
+        {%csrf_token%}
+    <input type="numbers" name="otp" class="input"></input>
+    <button type="submit" class="btn">Verify</button>
+    </form>
+</body>
+<style>
+h1{
+  position: absolute;
+  left: 48%;
+}
+.input
+{
+    position: absolute;
+    top: 20%;
+    left: 47%;
+}
+.btn
+{
+    position: absolute;
+    top: 20%;
+    left: 57%;
+}
+h4{
+    position: absolute;
+    top: 10%;
+    left: 47%;
+}
+</style>
+</html>

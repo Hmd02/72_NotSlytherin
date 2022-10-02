@@ -1,0 +1,230 @@
+<html>
+    <title>Login</title>
+    <head>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    </head>
+<style>
+    body {
+        font-family: "Lato", sans-serif;
+    }
+    
+    
+    
+    .main-head{
+        height: 150px;
+        background: #FFF;
+       
+    }
+    
+    .sidenav {
+        height: 100%;
+        background-color: #2ca851;
+        overflow-x: hidden;
+        padding-top: 20px;
+    }
+    
+    
+    .main {
+        padding: 0px 10px;
+    }
+    
+    @media screen and (max-height: 450px) {
+        .sidenav {padding-top: 15px;}
+    }
+    
+    @media screen and (max-width: 450px) {
+        .login-form{
+            margin-top: 10%;
+        }
+    
+        .register-form{
+            margin-top: 10%;
+        }
+    }
+    
+    @media screen and (min-width: 768px){
+        .main{
+            margin-left: 40%; 
+        }
+    
+        .sidenav{
+            width: 40%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+        }
+    
+        .login-form{
+            margin-top: 80%;
+        }
+    
+        .register-form{
+            margin-top: 20%;
+        }
+    }
+    
+    
+    .login-main-text{
+        margin-top: 20%;
+        padding: 60px;
+        color: #fff;
+    }
+    
+    .login-main-text h2{
+        font-weight: 300;
+    }
+    
+    .btn-black{
+        background-color: #000 !important;
+        color: #fff;
+    }
+    label {
+        display: inline-block;
+        margin-bottom: .5rem;
+        position: relative;
+        bottom: 135px;
+    }
+    .form-control {
+        display: block;
+        width: 100%;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        position: relative;
+        bottom: 140px;
+    }
+    .btn-black {
+        background-color: #000 !important;
+        color: #fff;
+        position: relative;
+        top: -145px;
+    }
+    .btn-secondary {
+        color: #fff;
+        background-color: #6c757d;
+        border-color: #6c757d;
+        position: relative;
+        top: -145px;
+    }
+    a {
+        color: #007bff;
+        text-decoration: none;
+        background-color: transparent;
+       
+        position: relative;
+        top: -143px;
+    }
+
+
+    .fade.show {
+        opacity: 1;
+    }
+    .alert-warning {
+        color: #856404;
+        background-color: #fff3cd;
+        border-color: #ffeeba;
+    }
+    .alert-dismissible {
+        padding-right: 4rem;
+    }
+    .alert {
+        position: relative;
+        padding: .75rem 1.25rem;
+        margin-bottom: 1rem;
+        border: 1px solid transparent;
+        border-radius: .25rem;
+    }
+    .fade {
+        transition: opacity .15s linear;
+    }
+    *, ::after, ::before {
+        box-sizing: border-box;
+    }
+
+
+
+    .close:not(:disabled):not(.disabled) {
+        cursor: pointer;
+    }
+    .alert-dismissible .close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: .75rem 1.25rem;
+        color: inherit;
+    }
+    button.close {
+        background-color: transparent;
+        border: 0;
+        -webkit-appearance: none;
+    }
+  
+    .close {
+        float: right;
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1;
+        text-shadow: 0 1px 0 #fff;
+        opacity: .5;
+    }
+    button, select {
+        text-transform: none;
+    }
+    button, input {
+        overflow: visible;
+    }
+    button, input, optgroup, select, textarea {
+        margin: 0;
+        font-family: inherit;
+    }
+    button {
+        border-radius: 0;
+    }
+    *, ::after, ::before {
+        box-sizing: border-box;
+    }
+    .bd-example::after {
+        display: block;
+        clear: both;
+        content: "";
+    }
+    *, ::after, ::before {
+        box-sizing: border-box;
+    }
+</style>
+<body>
+    <div class="sidenav">
+        <div class="login-main-text">
+           <h2>Application<br> Login Page</h2>
+           <p>Login or register from here to access.</p>
+        </div>
+     </div>
+     <div class="main">
+        <div class="col-md-6 col-sm-12">
+           <div class="login-form">
+              <form method="post" action="/login">
+                 {%csrf_token%}
+                 <div class="form-group">
+                    <label>User Name</label>
+                    <input type="text" class="form-control" name="username" placeholder="User Name">
+                 </div>
+                 <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="password" placeholder="Password">
+                 </div>
+                 <button type="submit" class="btn btn-black">Login</button>
+                 <a href="/signup">Don't have an account?</a>
+              </form>
+           </div>
+        </div>
+    </body>
+</html>

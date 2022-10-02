@@ -1,0 +1,130 @@
+<html>
+<head>
+      <title>Cart</title>
+    <style>
+       th, td {
+        border:1px solid black;
+        position: relative;
+        left: 550px;
+        padding: 10 10 10 10;
+        top: 30;
+    }
+
+        .navig{
+            overflow: hidden;
+            background-color: #e9e9e9;
+          }
+          .navig a {
+            float: left;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            margin-right: 15px;
+            width:72.5px;
+          }
+          
+          .navig a.right {
+            float: right;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            margin-right: 15px;
+            width:72.5px;
+          }
+          
+          .navig a.out {
+            float: right;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            margin-right: 15px
+            width:72.5px;
+          }
+          
+          a:hover {
+            background-color: #ddd;
+            color: black;
+          }
+          
+          a:active {
+            background-color: #2196F3;
+            color: white;
+          }
+          p
+          {
+           color: black;
+          }
+          .navig input[type=text] {
+            float: right;
+            padding-right: 100px;
+            padding-top: 15px
+            padding-bottom: 15px
+            border: none;
+            margin-top: 10px;
+            margin-right: 100px;
+            font-size: 17px;
+          }
+          .adjust
+          {
+            line-height: 0em;
+          }
+          .bord
+          {
+            border:0px;
+          }
+          .btn
+         {
+          cursor: pointer;
+          display: inline-block;
+          font-weight: 400;
+          text-align: center;
+          white-space: nowrap;
+          vertical-align: middle;
+          user-select: none;
+          border: 1px solid transparent;
+          padding: .375rem .75rem;
+          font-size: 1rem;
+          line-height: 1.5;
+          border-radius: .25rem;
+          transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+      }
+       .btn-primary{
+        color: black;
+        background-color: lightgray;
+       }
+    </style>
+</head>
+<body>
+   <div class="navig" id ="nav">
+      <a href="/home">Home</a>
+      <a href="/order">Order</a>
+      <a href="/contact">Contact</a>
+      <a class="out" href="/logoutuser">Logout</a>
+      <a href="" class="right">Login</a>
+      <a href="#" class="right">Cart</a>
+      </div>
+      <form method="POST" action="/calc">
+        {%csrf_token%}
+     <table style="width=100%">
+      <tr>
+        <th>Item</th>
+        <th>Quantity</th>
+      </tr>
+     {%for k,v in v4%}
+        <tr>
+         <td >{{k}} </td> 
+         <td>{{v}}</td> 
+        </tr>
+      {%endfor%}
+    </form>
+</body>
+</html>
